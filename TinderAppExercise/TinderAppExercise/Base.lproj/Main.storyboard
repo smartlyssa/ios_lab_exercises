@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6qc-K7-9zE">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Cards View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="TinderAppExercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Action" id="Wk0-mG-kbR">
+                                <rect key="frame" x="0.0" y="440" width="320" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ryan" id="LOK-GQ-dvO" customClass="DraggableImageView" customModule="TinderAppExercise" customModuleProvider="target">
+                                <rect key="frame" x="48" y="155" width="224" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SU7-pA-BF8" appends="YES" id="a3z-1t-Ehv"/>
+                                    <outletCollection property="gestureRecognizers" destination="dYn-fz-gbS" appends="YES" id="A2P-v6-nuN"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBar" id="NuI-eU-HT9">
+                                <rect key="frame" x="0.0" y="64" width="320" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t0K-eD-ffK"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="LOK-GQ-dvO" id="hvS-oS-fL8"/>
+                        <segue destination="oAi-Vx-xKx" kind="modal" identifier="profileSegue" id="JBM-LK-JI5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="SU7-pA-BF8">
+                    <connections>
+                        <action selector="didPan:" destination="BYZ-38-t0r" id="Qji-2p-PFz"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="dYn-fz-gbS">
+                    <connections>
+                        <action selector="didTap:" destination="BYZ-38-t0r" id="qX1-gZ-tA3"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="626" y="339"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="emM-Nv-miV">
+            <objects>
+                <viewController id="oAi-Vx-xKx" customClass="ProfileViewController" customModule="TinderAppExercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kcT-5C-ChM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ryan" id="hJV-3N-Z8h">
+                                <rect key="frame" x="48" y="155" width="224" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="QdO-2i-WTO" appends="YES" id="0Nt-Pg-tEd"/>
+                                </connections>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" id="HP4-22-pYo">
+                                <rect key="frame" x="-12" y="6" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="Elb-VA-yEx">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="AO9-0L-wjZ">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="modal" id="JBG-Qw-MRi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="backHome" id="GKt-Sz-cy8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Aw-FF-PAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QdO-2i-WTO">
+                    <connections>
+                        <action selector="didTap:" destination="oAi-Vx-xKx" id="5d0-uq-SFY"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1028" y="339"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IIE-b2-0GD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6qc-K7-9zE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Vs-v6-pta">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YRC-gM-MXd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvN-fd-FUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="339"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Action" width="320" height="108"/>
+        <image name="NavBar" width="320" height="65"/>
+        <image name="Ryan" width="224" height="257"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JBG-Qw-MRi"/>
+    </inferredMetricsTieBreakers>
+</document>
